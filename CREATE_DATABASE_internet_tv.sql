@@ -11,9 +11,7 @@
 -- Schema internet_tv
 -- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema internet_tv
--- -----------------------------------------------------
+START TRANSACTION;
 
 CREATE SCHEMA IF NOT EXISTS internet_tv DEFAULT CHARACTER SET utf8 ;
 USE internet_tv ;
@@ -26,9 +24,9 @@ CREATE TABLE IF NOT EXISTS internet_tv.programs (
   program_name VARCHAR(255) NULL,
   program_description VARCHAR(255) NULL,
   PRIMARY KEY (program_id))
-ENGINE = InnoDB;
+-- ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX program_id ON internet_tv.programs (program_id ASC) VISIBLE;
+-- CREATE UNIQUE INDEX program_id ON internet_tv.programs (program_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -38,9 +36,9 @@ CREATE TABLE IF NOT EXISTS internet_tv.channels (
   channel_id INT NOT NULL AUTO_INCREMENT,
   channel_name VARCHAR(255) NOT NULL,
   PRIMARY KEY (channel_id))
-ENGINE = InnoDB;
+-- ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX channel_id_UNIQUE ON internet_tv.channels (channel_id ASC) VISIBLE;
+-- CREATE UNIQUE INDEX channel_id_UNIQUE ON internet_tv.channels (channel_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -50,9 +48,9 @@ CREATE TABLE IF NOT EXISTS internet_tv.genres (
   genre_id INT NOT NULL AUTO_INCREMENT,
   genre_name VARCHAR(255) NULL,
   PRIMARY KEY (genre_id))
-ENGINE = InnoDB;
+-- ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX genre_id_UNIQUE ON internet_tv.genres (genre_id ASC) VISIBLE;
+-- CREATE UNIQUE INDEX genre_id_UNIQUE ON internet_tv.genres (genre_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -72,11 +70,11 @@ CREATE TABLE IF NOT EXISTS internet_tv.program_genres (
     REFERENCES internet_tv.genres (genre_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
-CREATE INDEX genre_id_idx ON internet_tv.program_genres (genre_id ASC) INVISIBLE;
 
-CREATE INDEX video_id_idx ON internet_tv.program_genres (program_id ASC) INVISIBLE;
+-- ENGINE = InnoDB;
+-- CREATE INDEX genre_id_idx ON internet_tv.program_genres (genre_id ASC) INVISIBLE;
+-- CREATE INDEX video_id_idx ON internet_tv.program_genres (program_id ASC) INVISIBLE;
 
 
 -- -----------------------------------------------------
@@ -92,16 +90,20 @@ CREATE TABLE IF NOT EXISTS internet_tv.season (
     REFERENCES internet_tv.programs (program_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX season_id_UNIQUE ON internet_tv.season (season_id ASC) VISIBLE;
 
-CREATE INDEX program_id_idx ON internet_tv.season (program_id ASC) VISIBLE;
+-- ENGINE = InnoDB;
+
+-- CREATE UNIQUE INDEX season_id_UNIQUE ON internet_tv.season (season_id ASC) VISIBLE;
+
+-- CREATE INDEX program_id_idx ON internet_tv.season (program_id ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
 -- Table internet_tv.episodes
 -- -----------------------------------------------------
+
+
 CREATE TABLE IF NOT EXISTS internet_tv.episodes (
   episode_id INT NOT NULL AUTO_INCREMENT,
   season_id INT NOT NULL,
@@ -116,11 +118,13 @@ CREATE TABLE IF NOT EXISTS internet_tv.episodes (
     REFERENCES internet_tv.season (season_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX episode_id_UNIQUE ON internet_tv.episodes (episode_id ASC) INVISIBLE;
 
-CREATE INDEX season_id_idx ON internet_tv.episodes (season_id ASC) INVISIBLE;
+-- ENGINE = InnoDB;
+
+-- CREATE UNIQUE INDEX episode_id_UNIQUE ON internet_tv.episodes (episode_id ASC) INVISIBLE;
+
+-- CREATE INDEX season_id_idx ON internet_tv.episodes (season_id ASC) INVISIBLE;
 
 
 -- -----------------------------------------------------
@@ -144,15 +148,15 @@ CREATE TABLE IF NOT EXISTS internet_tv.schedules (
     REFERENCES internet_tv.episodes (episode_id)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- ENGINE = InnoDB;
 
-CREATE INDEX channel_id_idx ON internet_tv.schedules (channel_id ASC) VISIBLE;
+-- CREATE INDEX channel_id_idx ON internet_tv.schedules (channel_id ASC) VISIBLE;
 
-CREATE INDEX episode_id_idx ON internet_tv.schedules (episode_id ASC) VISIBLE;
+-- CREATE INDEX episode_id_idx ON internet_tv.schedules (episode_id ASC) VISIBLE;
 
-CREATE UNIQUE INDEX schedule_id_UNIQUE ON internet_tv.schedules (schedule_id ASC) VISIBLE;
+-- CREATE UNIQUE INDEX schedule_id_UNIQUE ON internet_tv.schedules (schedule_id ASC) VISIBLE;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- SET SQL_MODE=@OLD_SQL_MODE;
+-- SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+-- SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
