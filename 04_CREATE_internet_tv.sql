@@ -33,8 +33,8 @@ CREATE TABLE IF NOT EXISTS internet_tv.program_genres (
   CONSTRAINT fk_program_genres_genre_id FOREIGN KEY (genre_id) REFERENCES internet_tv.genres (genre_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
--- seasonテーブル作成
-CREATE TABLE IF NOT EXISTS internet_tv.season (
+-- seasonsテーブル作成
+CREATE TABLE IF NOT EXISTS internet_tv.seasons (
   season_id INT NOT NULL AUTO_INCREMENT,
   program_id INT NOT NULL,
   season_number INT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS internet_tv.episodes (
   episode_length_seconds INT NOT NULL,
   episode_release_date DATE NOT NULL,
   PRIMARY KEY (episode_id),
-  CONSTRAINT fk_episodes_season_id FOREIGN KEY (season_id) REFERENCES internet_tv.season (season_id) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT fk_episodes_season_id FOREIGN KEY (season_id) REFERENCES internet_tv.seasons (season_id) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
 -- schedulesテーブル作成
