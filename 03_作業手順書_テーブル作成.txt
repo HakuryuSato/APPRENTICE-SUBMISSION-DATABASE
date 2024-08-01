@@ -3,6 +3,7 @@
 2."cmd"と入力
 3."コマンドプロンプト" が表示されたら 選択して起動する。
 
+
 [mysqlへのログイン]
 1.下記コマンドを入力する
 mysql -u ユーザ名 -p;
@@ -11,10 +12,22 @@ mysql -u ユーザ名 -p;
 >mysql -u ユーザ名 -p
 Enter password:
 
+
 [現状の確認]
-1.下記コマンドで "internet_tv" が表示されないことを確認する。
+下記コマンドで "internet_tv" が表示されないことを確認する。
 SHOW DATABASES;
 
 
-[テーブルの作成]
-2. CREATE_DATABASE_internet_tv.sql コマンドを投入する
+[テーブルの作成] 
+04_CREATE_DATABASE_internet_tv.sql に記述のあるコマンドを投入する
+*sqlファイルが開けない場合メモ帳で開けます
+
+
+[サンプルデータの作成]
+05_INSERT_SAMPLE_DATA.sql に記述のあるコマンドを投入する
+
+
+[投入データの確認]
+06_CHECK_SAMPLE_DATA.sql に記述のあるコマンドを投入する
+
+
