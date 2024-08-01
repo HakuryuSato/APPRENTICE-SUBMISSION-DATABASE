@@ -11,7 +11,15 @@ INSERT INTO channels (channel_id, channel_name) VALUES
 (9, 'Channel Nine'),
 (10, 'Channel Ten'),
 (11, 'Channel Eleven'),
-(12, 'Channel Twelve');
+(12, 'Channel Twelve'),
+(13, 'Channel Thirteen'),
+(14, 'Channel Fourteen'),
+(15, 'Channel Fifteen'),
+(16, 'Channel Sixteen'),
+(17, 'Channel Seventeen'),
+(18, 'Channel Eighteen'),
+(19, 'Channel Nineteen'),
+(20, 'Channel Twenty');
 
 -- テーブル: genres
 INSERT INTO genres (genre_id, genre_name) VALUES
@@ -24,7 +32,12 @@ INSERT INTO genres (genre_id, genre_name) VALUES
 (7, 'Thriller'),
 (8, 'Romance'),
 (9, 'Documentary'),
-(10, 'Animation');
+(10, 'Animation'),
+(11, 'Mystery'),
+(12, 'Adventure'),
+(13, 'Biography'),
+(14, 'Crime'),
+(15, 'Musical');
 
 -- テーブル: programs
 INSERT INTO programs (program_id, program_name, program_description) VALUES
@@ -37,7 +50,12 @@ INSERT INTO programs (program_id, program_name, program_description) VALUES
 (7, 'Program Seven', 'Description of Program Seven'),
 (8, 'Program Eight', 'Description of Program Eight'),
 (9, 'Program Nine', 'Description of Program Nine'),
-(10, 'Program Ten', 'Description of Program Ten');
+(10, 'Program Ten', 'Description of Program Ten'),
+(11, 'Program Eleven', 'Description of Program Eleven'),
+(12, 'Program Twelve', 'Description of Program Twelve'),
+(13, 'Program Thirteen', 'Description of Program Thirteen'),
+(14, 'Program Fourteen', 'Description of Program Fourteen'),
+(15, 'Program Fifteen', 'Description of Program Fifteen');
 
 -- テーブル: seasons
 INSERT INTO seasons (season_id, program_id, season_number) VALUES
@@ -60,7 +78,12 @@ INSERT INTO seasons (season_id, program_id, season_number) VALUES
 (17, 7, 2),
 (18, 8, 2),
 (19, 9, 2),
-(20, 10, 2);
+(20, 10, 2),
+(21, 11, 1),
+(22, 12, 1),
+(23, 13, 1),
+(24, 14, 1),
+(25, 15, 1);
 
 -- テーブル: episodes
 INSERT INTO episodes (episode_id, season_id, episode_number, episode_title, episode_description, episode_length_seconds, episode_release_date) VALUES
@@ -83,9 +106,12 @@ INSERT INTO episodes (episode_id, season_id, episode_number, episode_title, epis
 (17, 9, 1, 'Climax', 'Building up to the finale', 3600, CURDATE()),
 (18, 9, 2, 'The Great Battle', 'Epic confrontations', 3600, CURDATE()),
 (19, 10, 1, 'Finale', 'Conclusion of the journey', 3600, CURDATE()),
-(20, 10, 2, 'A New Dawn', 'New beginnings after the end', 3600, CURDATE());
-
-
+(20, 10, 2, 'A New Dawn', 'New beginnings after the end', 3600, CURDATE()),
+(21, 11, 1, 'First Encounter', 'The story starts', 3600, CURDATE()),
+(22, 11, 2, 'Unexpected Guest', 'An unexpected character arrives', 3600, CURDATE()),
+(23, 12, 1, 'New Horizons', 'Exploring new places', 3600, CURDATE()),
+(24, 12, 2, 'Dark Secrets', 'Revealing hidden truths', 3600, CURDATE()),
+(25, 13, 1, 'Rising Action', 'Tensions build', 3600, CURDATE());
 
 -- テーブル: schedules
 INSERT INTO schedules (schedule_id, channel_id, episode_id, schedule_start_time, schedule_end_time, schedule_view_count) VALUES
@@ -108,5 +134,9 @@ INSERT INTO schedules (schedule_id, channel_id, episode_id, schedule_start_time,
 (17, 5, 17, '2024-08-02 14:00:00', '2024-08-02 15:00:00', 2600),
 (18, 6, 18, '2024-08-02 15:00:00', '2024-08-02 16:00:00', 2700),
 (19, 7, 19, '2024-08-02 16:00:00', '2024-08-02 17:00:00', 2800),
-(20, 8, 20, '2024-08-02 17:00:00', '2024-08-02 18:00:00', 2900);
-
+(20, 8, 20, '2024-08-02 17:00:00', '2024-08-02 18:00:00', 2900),
+(21, 9, 21, '2024-08-03 08:00:00', '2024-08-03 09:00:00', 3100),
+(22, 10, 22, '2024-08-03 09:00:00', '2024-08-03 10:00:00', 3200),
+(23, 11, 23, '2024-08-03 10:00:00', '2024-08-03 11:00:00', 3300),
+(24, 12, 24, '2024-08-03 11:00:00', '2024-08-03 12:00:00', 3400),
+(25, 13, 25, '2024-08-03 12:00:00', '2024-08-03 13:00:00', 3500);
