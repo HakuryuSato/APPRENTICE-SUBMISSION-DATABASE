@@ -1,0 +1,29 @@
++----------------+------------------------+-----------+--------------------------+-------------------+---------------+-------------+----------------+------------+----------------+
+| TABLE_NAME     | COLUMN_NAME            | DATA_TYPE | CHARACTER_MAXIMUM_LENGTH | NUMERIC_PRECISION | NUMERIC_SCALE | IS_NULLABLE | COLUMN_DEFAULT | COLUMN_KEY | EXTRA          |
++----------------+------------------------+-----------+--------------------------+-------------------+---------------+-------------+----------------+------------+----------------+
+| channels       | channel_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        | auto_increment |
+| channels       | channel_name           | varchar   |                      255 |              NULL |          NULL | NO          | NULL           |            |                |
+| episodes       | episode_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        | auto_increment |
+| episodes       | season_id              | int       |                     NULL |                10 |             0 | NO          | NULL           | MUL        |                |
+| episodes       | episode_number         | int       |                     NULL |                10 |             0 | YES         | NULL           |            |                |
+| episodes       | episode_title          | varchar   |                      255 |              NULL |          NULL | NO          | NULL           |            |                |
+| episodes       | episode_description    | varchar   |                      255 |              NULL |          NULL | YES         | NULL           |            |                |
+| episodes       | episode_length_seconds | int       |                     NULL |                10 |             0 | NO          | NULL           |            |                |
+| episodes       | episode_release_date   | date      |                     NULL |              NULL |          NULL | NO          | NULL           |            |                |
+| genres         | genre_id               | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        | auto_increment |
+| genres         | genre_name             | varchar   |                      255 |              NULL |          NULL | NO          | NULL           |            |                |
+| program_genres | genre_id               | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        |                |
+| program_genres | program_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        |                |
+| programs       | program_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        | auto_increment |
+| programs       | program_name           | varchar   |                      255 |              NULL |          NULL | NO          | NULL           |            |                |
+| programs       | program_description    | varchar   |                      255 |              NULL |          NULL | YES         | NULL           |            |                |
+| schedules      | schedule_id            | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        | auto_increment |
+| schedules      | channel_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | MUL        |                |
+| schedules      | episode_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | MUL        |                |
+| schedules      | schedule_start_time    | datetime  |                     NULL |              NULL |          NULL | NO          | NULL           |            |                |
+| schedules      | schedule_end_time      | datetime  |                     NULL |              NULL |          NULL | NO          | NULL           |            |                |
+| schedules      | schedule_view_count    | int       |                     NULL |                10 |             0 | NO          | NULL           |            |                |
+| season         | season_id              | int       |                     NULL |                10 |             0 | NO          | NULL           | PRI        | auto_increment |
+| season         | program_id             | int       |                     NULL |                10 |             0 | NO          | NULL           | MUL        |                |
+| season         | season_number          | int       |                     NULL |                10 |             0 | YES         | NULL           |            |                |
++----------------+------------------------+-----------+--------------------------+-------------------+---------------+-------------+----------------+------------+----------------+
