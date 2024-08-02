@@ -1,2 +1,0 @@
-1. ER図を確認する
-2. CREATE_DATABASE_internet_tv.sql コマンドを投入する
